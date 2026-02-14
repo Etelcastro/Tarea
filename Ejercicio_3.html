@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3</title>
+</head>
+<body>
+
+<script>
+  // 1) Pedimos el año de nacimiento
+  let nacimiento = Number(prompt("Ingresa tu año de nacimiento (ej: 2008):"));
+
+  // 2) Año actual automático
+  let añoActual = new Date().getFullYear();
+
+  // 3) Calculamos edad
+  let edad = añoActual - nacimiento;
+
+  // 4) Ver si es mayor de edad
+  if (edad >= 18) {
+    alert("Tu edad es: " + edad + "\n✅ Eres mayor de edad");
+  } else {
+    alert("Tu edad es: " + edad + "\n❌ Eres menor de edad");
+  }
+
+  // 5) Ver si el año de nacimiento fue bisiesto
+  // Bisiesto si: divisible entre 400 OR (divisible entre 4 AND no divisible entre 100)
+  if ( (nacimiento % 400 == 0) || (nacimiento % 4 == 0 && nacimiento % 100 != 0) ) {
+    alert("📅 Tu año de nacimiento (" + nacimiento + ") fue bisiesto");
+  } else {
+    alert("📅 Tu año de nacimiento (" + nacimiento + ") NO fue bisiesto");
+  }
+</script>
+
+</body>
+</html>
