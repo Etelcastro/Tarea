@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2</title>
+</head>
+<body>
+<script>
+  let usuario = prompt("Usuario:");
+  let contraseña = prompt("Contraseña:");
+  let rol = prompt("Rol (admin/editor/visitante):");
+
+  let usuarioCorrecto = "admin";
+  let contraseñaCorrecta = "1234";
+
+  if (usuario == usuarioCorrecto) {
+    if (contraseña == contraseñaCorrecta) {
+      alert("✅ Acceso permitido");
+
+      if (rol == "admin") {
+        alert("Permisos: ver, crear, editar, eliminar");
+      } else if (rol == "editor") {
+        alert("Permisos: ver y editar");
+      } else if (rol == "visitante") {
+        alert("Permisos: solo ver");
+      } else {
+        alert("⚠️ Rol no válido");
+      }
+
+    } else {
+      alert("❌ Contraseña incorrecta");
+    }
+  } else {
+    alert("❌ Usuario incorrecto");
+  }
+</script>
+</body>
+</html>
