@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 4</title>
+</head>
+<body>
+
+<script>
+  // 1) Pedimos datos
+  let nombre = prompt("Nombre del producto:");
+  let precio = Number(prompt("Precio del producto:"));
+  let categoria = prompt("Categoría (tecnologia/alimentos/ropa):");
+
+  // 2) Definimos la tasa de impuesto según categoría
+  let tasa = 0;
+
+  if (categoria == "tecnologia" || categoria == "tecnología") {
+    tasa = 0.18;
+  } else if (categoria == "alimentos") {
+    tasa = 0.08;
+  } else if (categoria == "ropa") {
+    tasa = 0.12;
+  } else {
+    tasa = 0; // si no reconoce la categoría
+  }
+
+  // 3) Calculamos impuesto y total
+  let impuesto = precio * tasa;
+  let total = precio + impuesto;
+
+  // 4) Clasificamos el producto por precio
+  let clasificacion = "";
+
+  if (precio >= 500) {
+    clasificacion = "lujo";
+  } else if (precio < 100) {
+    clasificacion = "basico";
+  } else {
+    clasificacion = "estandar";
+  }
+
+  // 5) Mostramos resultados
+  alert(
+    "Producto: " + nombre +
+    "\nCategoría: " + categoria +
+    "\nClasificación: " + clasificacion +
+    "\nImpuesto: " + impuesto.toFixed(2) +
+    "\nTotal a pagar: " + total.toFixed(2)
+  );
+</script>
+
+</body>
+</html>
